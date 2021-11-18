@@ -6,7 +6,7 @@ const BestSeller = () => {
 
     useEffect(() => {
 
-        fetch("http://localhost:300/products?bestSeller=yes")
+        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/products?bestSeller=yes`)
             .then(response => response.json())
             .then(json => {
 

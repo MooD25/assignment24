@@ -15,8 +15,8 @@ const RegistrationForm = () => {
 
         event.preventDefault();
 
-        //`${process.env.REACT_APP_BACK_END_API_DOMAIN}/users`
-        fetch("http://localhost:300/customers", {
+
+        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/customers`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

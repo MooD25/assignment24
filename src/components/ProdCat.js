@@ -6,7 +6,7 @@ const ProdCat = () => {
 
     useEffect(() => {
 
-        fetch("http://localhost:300/products/allCategories")
+        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/products/allCategories`)
             .then(response => response.json())
             .then(json => {
 
