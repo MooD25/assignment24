@@ -10,7 +10,7 @@ const ProdDetailPage = (props) => {
 
     useEffect(() => {
 
-        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/${id}`)
+        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}${id}`)
             .then(response => response.json())
             .then(json => {
 

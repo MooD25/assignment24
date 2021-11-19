@@ -16,7 +16,7 @@ const RegistrationForm = () => {
         event.preventDefault();
 
 
-        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/customers`, {
+        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}customers`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
