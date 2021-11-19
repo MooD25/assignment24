@@ -1,12 +1,13 @@
 import React from 'react'
 import { useEffect, useState } from "react"
+import Header from '../components/Header'
 
 const ProdListing = () => {
     const [products, setProducts] = useState([{}]);
 
     useEffect(() => {
 
-        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}products`)
+        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/products`)
             .then(response => response.json())
             .then(json => {
 
@@ -21,6 +22,7 @@ const ProdListing = () => {
     }, [])
     return (
         <>
+            <Header />
             <section id="bestseller-productlist">
                 <div>
                     {products.map(product => {
@@ -29,8 +31,8 @@ const ProdListing = () => {
                                 <figure class="figure">
                                     <img src={product.photo} class="figure-img img-fluid rounded" alt="" />
                                     <figcaption class="figure-caption">
-                                        <p>Prod Name: {product._id}</p>
-                                        <p>Prod Price: {product.price} </p>
+                                        <p> {product.productName}</p>
+                                        <p>${product.price} </p>
                                     </figcaption>
                                 </figure>
 

@@ -2,8 +2,10 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer>
-            <p>this is the footer</p>
+        <footer class="text-center">
+
+            <p>Hope you enjoyed!</p>
+            <a href="#Home-Page-Top">Back To Top↑</a>
         </footer>
     )
 }

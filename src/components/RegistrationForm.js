@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Form, Button } from 'react-bootstrap'
 
 const RegistrationForm = () => {
 
@@ -16,7 +17,7 @@ const RegistrationForm = () => {
         event.preventDefault();
 
 
-        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}customers`, {
+        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/customers`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -31,8 +32,8 @@ const RegistrationForm = () => {
                     firstName: "",
                     lastName: "",
                     email: "",
-                    password: "",
-                    confirmPassword: ""
+                    password: ""
+
                 })
 
             })
@@ -50,7 +51,7 @@ const RegistrationForm = () => {
 
                 <h1>Register</h1>
 
-                <form action="" onSubmit={onCreateAccount}>
+                {/* <form action="" onSubmit={onCreateAccount}>
 
                     <div className="form-control">
                         <label htmlFor="firstName">First Name</label>
@@ -81,20 +82,52 @@ const RegistrationForm = () => {
                         }} />
                     </div>
 
-                    <div className="form-control">
-                        <label htmlFor="cpassword">Confirm Password</label>
-                        <input type="text" id="password" value={formData.confFirmPassword} onChange={(event) => {
-                            setFormData({ ...formData, confirmPassword: event.target.value });
-                        }} />
-                    </div>
-
 
                     <div className="form-control">
                         <button className="btn" type="submit">Create Account</button>
                     </div>
 
-                </form>
+                </form> */}
 
+
+                <Form action="" onSubmit={onCreateAccount}>
+                    <Form.Group className="mb-3" controlId="formFirstName">
+                        <Form.Label>First Name</Form.Label>
+                        <Form.Control type="text" id="firstName" value={formData.firstName} onChange={(event) => {
+                            setFormData({ ...formData, firstName: event.target.value });
+                        }} />
+
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formLastName">
+                        <Form.Label>Last Name</Form.Label>
+                        <Form.Control type="text" id="lastName" value={formData.lastName} onChange={(event) => {
+                            setFormData({ ...formData, lastName: event.target.value });
+                        }} />
+
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control type="text" id="email" value={formData.email} onChange={(event) => {
+                            setFormData({ ...formData, email: event.target.value });
+                        }} />
+
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="text" id="password" valeu={formData.password} onChange={(event) => {
+                            setFormData({ ...formData, password: event.target.value });
+                        }} />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="Check me out" />
+                    </Form.Group>
+                    <Button variant="primary" type="submit">
+                        Create Account
+                    </Button>
+                </Form>
             </div>
 
         </section>

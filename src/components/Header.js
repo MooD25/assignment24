@@ -1,21 +1,26 @@
 import React from 'react'
-import { Button, Navbar, Container, Nav, NavDropdown, Form, FormControl } from 'react-bootstrap'
+import { Button, Navbar, Container, Nav, Form, FormControl } from 'react-bootstrap'
 
 
 
 const Header = () => {
   return (
     <header>
-      <img
-
-        src="C:\Users\marco\OneDrive\Desktop\Assignment1422\assignment24\src\image\ShopMart-logos.jpeg"
-        alt="Logo"
-      />
+      <div id="Home-Page-Top"></div>
 
 
       <Navbar bg="light" expand="lg">
+        <img style={{
+          width: '70px',
+          height: '50px'
+        }}
+
+
+          src="https://t3.ftcdn.net/jpg/04/19/34/56/360_F_419345634_RZ7E81Uy3gsY6P1szIrStdR9R9iQIwvZ.jpg"
+          alt="Logo"
+        />
         <Container fluid>
-          <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+          <Navbar.Brand href="#">ShopmartRUs</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -23,18 +28,12 @@ const Header = () => {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">Link</Nav.Link>
-              <NavDropdown title="Link" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">
-                  Something else here
-                </NavDropdown.Item>
-              </NavDropdown>
-              <Nav.Link href="#" disabled>
-                Link
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/prodlisting">Products</Nav.Link>
+              <Nav.Link href="/prodlisting">Categories</Nav.Link>
+              <Nav.Link href="/registration">Registration</Nav.Link>
+              <Nav.Link href="/login" >
+                Login
               </Nav.Link>
             </Nav>
             <Form className="d-flex">
