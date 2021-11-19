@@ -6,7 +6,7 @@ const ProdListing = () => {
 
     useEffect(() => {
 
-        fetch("http://localhost:300/products")
+        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/products`)
             .then(response => response.json())
             .then(json => {
 

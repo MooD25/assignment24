@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from "react-router-dom"
+
 import { useEffect, useState } from "react"
 
 const ProdDetailPage = (props) => {
@@ -10,7 +10,7 @@ const ProdDetailPage = (props) => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:300/products/${id}`)
+        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/${id}`)
             .then(response => response.json())
             .then(json => {
 
