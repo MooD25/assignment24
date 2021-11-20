@@ -1,16 +1,20 @@
-import React from 'react'
 
+import Header from "../components/Header";
+import ProductDetail from "../components/ProductDetail";
+import Footer from "../components/Footer";
 import { useEffect, useState } from "react"
 
-const ProdDetailPage = (props) => {
-    let id = window.location.pathname.split("/")[2]
+const ProdDetailPage = () => {
+
+    let slug = window.location.pathname.split("/");
+    const id = slug[2];
     console.log("id: " + id)
 
-    const [product, setProduct] = useState([]);
+    const [products, setProduct] = useState([]);
 
     useEffect(() => {
 
-        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}${id}`)
+        fetch(`${process.env.REACT_APP_BACK_END_API_DOMAIN}/products/${id}`)
             .then(response => response.json())
             .then(json => {
 
@@ -26,8 +30,11 @@ const ProdDetailPage = (props) => {
 
     return (
         <div>
-            <h3>{product.productName} costs {product.price}</h3>
+            <Header />
+            <ProductDetail products={products} />
+            <Footer />
         </div>
+
     )
 }
 

@@ -24,46 +24,62 @@ const BestSeller = () => {
     }, [])
     return (
         <>
-            <section id="bestseller-productlist">
-                <div>
+            <h2 class="text-center">Best Sellers</h2>
+            <section id="bestseller-productlist" >
+
+                <div className="row mx-auto" style={{ width: "100%" }}>
                     {products.map(product => {
                         return (
-                            <>
-                                {/* <figure class="figure">
-                                    <img src={product.photo} class="figure-img img-fluid rounded" alt="" />
-                                    <figcaption class="figure-caption">
-                                        <p>Prod Name: {product._id}</p>
-                                        <p>Prod Price: {product.price} </p>
-                                    </figcaption>
-                                </figure> */}
-                                <Link
-                                    to={`/productDetail/${products._id}`}
-                                    style={{ textDecoration: "none" }}
-                                >
-                                    <Figure
+                            <div class="col-sm-3">
+
+
+                                <div>
+
+
+
+                                    <Link
+                                        to={`/productDetail/${product._id}`}
+                                        style={{ textDecoration: "none" }}
                                     >
-                                        <Figure.Image
-                                            width={171}
-                                            height={180}
-                                            alt="171x180"
-                                            src={product.photo}
-
-                                        />
-                                        <Figure.Caption>
-                                            <p>{product.productName}</p>
-                                            <p>{product.price} </p>
-                                        </Figure.Caption>
-                                    </Figure>
-                                </Link>
+                                        <Figure
 
 
 
-                            </>
+                                        >
+                                            <Figure.Image
+                                                style={{
+                                                    objectFit: 'cover',
+                                                    borderRadius: 55,
+                                                    width: '50vw',
+                                                    height: '30vh'
+                                                }}
+
+                                                src={product.photo}
+
+                                            />
+                                            <Figure.Caption>
+                                                <p class="text-center">{product.productName}</p>
+                                                <p class="text-center">${product.price} </p>
+                                            </Figure.Caption>
+                                        </Figure>
+                                    </Link>
+
+
+                                </div>
+                            </div>
+
+
+
+
                         )
+
                     })}
+
                 </div>
+
+
             </section>
-            )
+
         </>)
 }
 

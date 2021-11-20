@@ -1,5 +1,6 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/Design.css'
 
 import Home from "../pages/Home.js";
 import ProdListing from "../pages/ProdListing.js";

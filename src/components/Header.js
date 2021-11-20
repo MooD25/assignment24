@@ -30,7 +30,6 @@ const Header = () => {
             >
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/prodlisting">Products</Nav.Link>
-              <Nav.Link href="/prodlisting">Categories</Nav.Link>
               <Nav.Link href="/registration">Registration</Nav.Link>
               <Nav.Link href="/login" >
                 Login

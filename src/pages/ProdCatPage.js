@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
-import ProdCat from "../components/ProdCat";
+import { Figure } from 'react-bootstrap'
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 const ProdCatPage = (props) => {
     let { category } = useParams();
@@ -23,7 +24,52 @@ const ProdCatPage = (props) => {
     return (
         <div>
             <Header />
-            <ProdCat products={products} category={category} />
+            <h2 class="text-center">Categories</h2>
+            <section id="bestseller-productlist">
+                <div>
+                    {products.map(product => {
+                        return (
+                            <div class="col-sm-3">
+
+
+                                <div>
+
+
+
+                                    <Link
+                                        to={`/productDetail/${product._id}`}
+                                        style={{ textDecoration: "none" }}
+                                    >
+                                        <Figure
+
+
+
+                                        >
+                                            <Figure.Image
+                                                style={{
+                                                    objectFit: 'cover',
+                                                    borderRadius: 55,
+                                                    width: '50vw',
+                                                    height: '30vh'
+                                                }}
+
+                                                src={product.photo}
+
+                                            />
+                                            <Figure.Caption>
+                                                <p class="text-center">{product.productName}</p>
+                                                <p class="text-center">${product.price} </p>
+                                            </Figure.Caption>
+                                        </Figure>
+                                    </Link>
+
+
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
+            </section>
             <Footer />
         </div>
     );

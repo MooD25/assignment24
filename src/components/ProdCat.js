@@ -24,8 +24,9 @@ const ProdCat = () => {
     let img;
     return (
         <>
+            <h2 class="text-center">Categories</h2>
             <section id="bestseller-productlist">
-                <div>
+                <div className="row mx-auto" style={{ width: "100%" }}>
                     {categories.map(category => {
                         if (category === "toys")
                             img =
@@ -42,21 +43,28 @@ const ProdCat = () => {
 
                         return (
                             <>
-                                <Link to={`/cat/${category}`} style={{ textDecoration: "none" }}>
-                                    <Figure>
-                                        <Figure.Image
-                                            width={171}
-                                            height={180}
-                                            alt="171x180"
-                                            src={img}
 
-                                        />
-                                        <Figure.Caption>
-                                            <p class="text-center"> {category}</p>
-                                        </Figure.Caption>
-                                    </Figure>
-                                </Link>
+                                <div className="col-xxl-3 col-md-3">
+                                    <Link to={`/cat/${category}`} style={{ textDecoration: "none" }}>
+                                        <Figure>
+                                            <Figure.Image
+                                                style={{
+                                                    objectFit: 'cover',
+                                                    borderRadius: 55,
+                                                    width: '50vw',
+                                                    height: '30vh'
+                                                }}
 
+                                                alt="171x180"
+                                                src={img}
+
+                                            />
+                                            <Figure.Caption>
+                                                <p class="text-center"> {category}</p>
+                                            </Figure.Caption>
+                                        </Figure>
+                                    </Link>
+                                </div>
 
                             </>
                         )
